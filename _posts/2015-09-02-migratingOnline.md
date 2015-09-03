@@ -47,8 +47,7 @@ Now generate a dataset of a line with some noise built in and see what it looks 
 
 
 
-![png](migratingOnline_files/migratingOnline_4_1.png)
-
+![_config.yml]({{ site.baseurl }}/images/migratingOnline_4_1.png)
 
 
     m=sm.OLS(df['y'],df['x']).fit()
