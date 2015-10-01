@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2015-09-06T23:14:42-00:00</lastmod>
+<lastmod>2015-09-30T22:39:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2015-09-06T23:14:42-00:00</lastmod>
+<lastmod>2015-09-30T22:39:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2015-09-06T23:14:42-00:00</lastmod>
+<lastmod>2015-09-30T22:39:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2015-09-06T23:14:42-00:00</lastmod>
+<lastmod>2015-09-30T22:39:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,8 +39,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/getting-started-with-RStudio.html</loc>
-<lastmod>2015-09-04T00:00:00+02:00</lastmod>
+<loc>/using-jupyter-to-plot-r.html</loc>
+<lastmod>2015-09-30T00:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/R test.html</loc>
+<lastmod>2015-09-22T00:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/simple-model-comparisons-first-rstudio-online.html</loc>
+<lastmod>2015-09-09T20:14:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -53,36 +67,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/another_post.html</loc>
-<lastmod>2015-09-03T21:36:00+02:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/new-post.html</loc>
-<lastmod>2015-09-03T09:04:00+02:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/first-try.html</loc>
 <lastmod>2015-09-03T00:00:00+02:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/first_post.html</loc>
-<lastmod>2014-12-13T18:32:00+01:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/my-sup-title.html</loc>
-<lastmod>2012-07-10T20:14:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -109,27 +95,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/category/test.html</loc>
-<lastmod>2014-12-13T18:32:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/category/page.html</loc>
-<lastmod>2015-09-03T21:36:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/category/misc.html</loc>
-<lastmod>2015-09-03T09:04:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/category/ipython-notebook.html</loc>
 <lastmod>2015-09-03T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -138,14 +103,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/blog.html</loc>
-<lastmod>2015-09-04T00:00:00+00:09</lastmod>
+<lastmod>2015-09-30T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/ipython.html</loc>
-<lastmod>2015-09-03T00:00:00+00:09</lastmod>
+<loc>/tag/jupyter.html</loc>
+<lastmod>2015-09-30T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -158,15 +123,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/rstudio.html</loc>
-<lastmod>2015-09-04T00:00:00+00:09</lastmod>
+<loc>/tag/r.html</loc>
+<lastmod>2015-09-30T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/ipython.html</loc>
+<lastmod>2015-09-22T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/blogging.html</loc>
-<lastmod>2015-09-03T00:00:00+00:09</lastmod>
+<lastmod>2015-09-22T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -194,7 +166,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/peter-frick.html</loc>
-<lastmod>2015-09-04T00:00:00+00:09</lastmod>
+<lastmod>2015-09-30T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

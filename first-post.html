@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>blogging - Peter Frick</title>
+    <title>First post - Peter Frick</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,19 @@
 
 
 
+<link rel="canonical" href="/first-post.html">
 
-    <meta name="author" content="Peter Frick" />
-    <meta name="keywords" content="blogging" />
+        <meta name="author" content="Peter Frick" />
+        <meta name="description" content="Hello world from pelican! I decided to use pelican to use this blog." />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Peter Frick" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Peter Frick"/>
-        <meta property="og:url" content=""/>
-        <meta property="og:description" content="Peter Frick"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="First post"/>
+        <meta property="og:url" content="/first-post.html"/>
+        <meta property="og:description" content="Hello world from pelican! I decided to use pelican to use this blog."/>
+        <meta property="article:published_time" content="2015-09-01" />
+            <meta property="article:section" content="blog" />
+            <meta property="article:author" content="Peter Frick" />
 
 
     <!-- Bootstrap -->
@@ -59,9 +62,12 @@ Peter Frick            </a>
                             <a href="/category/welcome.html">Welcome</a>
                         </li>
                         <li >
-                            <a href="/category/ipython-notebook.html">Ipython notebook</a>
+                            <a href="/category/misc.html">Misc</a>
                         </li>
                         <li >
+                            <a href="/category/ipython-notebook.html">Ipython notebook</a>
+                        </li>
+                        <li class="active">
                             <a href="/category/blog.html">Blog</a>
                         </li>
             </ul>
@@ -77,29 +83,39 @@ Peter Frick            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="/R test.html">Trying to put R online</a></h2>
-                <div class="summary"><html><body><div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                    <a class="btn btn-default btn-xs" href="/R test.html">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/first-post.html"
+                       rel="bookmark"
+                       title="Permalink to First post">
+                        First post
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-09-01T18:32:00+02:00"> Tue 01 September 2015</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/first-try.html">First try</a></h2>
-                <div class="summary"><html><body><div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Purpose">Purpose<a class="anchor-link" href="#Purpose">¶</a></h1><p>This is the first iPython notebook I'm adding online. The goal of this notebook is more to learn the syntax, etc.
-For example, one asterisk makes text <em>italic</em>. Two asterisks makes text <strong>bold</strong>. Putting 2 dollar signs before and after an expression gives an equation:</p>
-$$y=10*x$$<p>An equation can be displayed inline with the text by adding a single dollar sign on
-either side of the expression, like so: $y=sin(x)$</p>
-                    <a class="btn btn-default btn-xs" href="/first-try.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+                <p>Hello world from pelican! I decided to use pelican to use this blog.</p>
+
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -109,7 +125,8 @@ either side of the expression, like so: $y=sin(x)$</p>
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
               <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://www.linkedin.com/pub/peter-frick/39/455/ab7"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
               </ul>
             </li>
 
@@ -132,6 +149,11 @@ either side of the expression, like so: $y=sin(x)$</p>
         <li class="list-group-item">
             <a href="http://jinja.pocoo.org/" target="_blank">
                 Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
             </a>
         </li>
       </ul>
