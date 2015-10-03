@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2015-09-30T22:59:48-00:00</lastmod>
+<lastmod>2015-10-02T21:43:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2015-09-30T22:59:48-00:00</lastmod>
+<lastmod>2015-10-02T21:43:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2015-09-30T22:59:48-00:00</lastmod>
+<lastmod>2015-10-02T21:43:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2015-09-30T22:59:48-00:00</lastmod>
+<lastmod>2015-10-02T21:43:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,22 +39,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/using-jupyter-to-plot-r.html</loc>
+<loc>/python-multiple-regression.html</loc>
+<lastmod>2015-10-02T00:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/error-plots-r-jupyter.html</loc>
 <lastmod>2015-09-30T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/R test.html</loc>
-<lastmod>2015-09-22T00:00:00+02:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/simple-model-comparisons-first-rstudio-online.html</loc>
-<lastmod>2015-09-09T20:14:00+02:00</lastmod>
+<loc>/variable-selection-r-multiple-regression.html</loc>
+<lastmod>2015-09-08T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -67,7 +67,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/first-try.html</loc>
+<loc>/python-first-try-jupyter.html</loc>
 <lastmod>2015-09-03T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -81,29 +81,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/category/ipython-notebook.html</loc>
-<lastmod>2015-09-03T00:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/category/blog.html</loc>
-<lastmod>2015-09-30T00:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/ipython.html</loc>
-<lastmod>2015-09-22T00:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/r.html</loc>
-<lastmod>2015-09-30T00:00:00+00:09</lastmod>
+<lastmod>2015-10-02T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -116,15 +95,50 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/data-science.html</loc>
+<lastmod>2015-10-02T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/python.html</loc>
+<lastmod>2015-10-02T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/blogging.html</loc>
-<lastmod>2015-09-22T00:00:00+00:09</lastmod>
+<lastmod>2015-09-03T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/r.html</loc>
+<lastmod>2015-09-30T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/ipython.html</loc>
+<lastmod>2015-09-03T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/regression.html</loc>
+<lastmod>2015-10-02T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/author/peter-frick.html</loc>
-<lastmod>2015-09-30T00:00:00+00:09</lastmod>
+<lastmod>2015-10-02T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
