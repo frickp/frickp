@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Measuring cancer cell dynamics in response to therapy - Peter Frick</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/r-phd-code.html">
+
+        <meta name="author" content="Peter Frick" />
+        <meta name="keywords" content="R,PhD" />
+        <meta name="description" content="Example R code to process highly-multiplexed cancer drug responses. Formatted so that you should be able to run it on a mac." />
+
+        <meta property="og:site_name" content="Peter Frick" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Measuring cancer cell dynamics in response to therapy"/>
+        <meta property="og:url" content="/r-phd-code.html"/>
+        <meta property="og:description" content="Example R code to process highly-multiplexed cancer drug responses. Formatted so that you should be able to run it on a mac."/>
+        <meta property="article:published_time" content="2015-10-09" />
+            <meta property="article:section" content="blog" />
+            <meta property="article:tag" content="R" />
+            <meta property="article:tag" content="PhD" />
+            <meta property="article:author" content="Peter Frick" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Peter Frick            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/about-me.html">
+                             About me
+                          </a></li>
+                        <li class="active">
+                            <a href="/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/r-phd-code.html"
+                       rel="bookmark"
+                       title="Permalink to Measuring cancer cell dynamics in response to therapy">
+                        Measuring cancer cell dynamics in response to therapy
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-10-09T10:20:00+02:00"> Fri 09 October 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/r.html">R</a>
+        /
+	<a href="/tag/phd.html">PhD</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>Purpose</h3>
+<p>The goal of this post is to allow <em>you</em> to run some of the code I used during my PhD. 
+I don't want to assume that you know how to use R, or how to use git. So, follow the steps to see a flavor of what I did.</p>
+<p>If you are curious, the research goal here is to quantify the dynamic response of many
+cancer cell clones in response to drugs. Clones just means a group of cells with common
+behavior and ancestry. You could think of them like a tribe, where tumor is composed of many clones, or tribes. Evolution works by 
+selecting more fit individuals (clones in this case) amongst a diverse population.</p>
+<p>Easy right? Well, if you could quantify the diversity of a population, and could understand
+ what each individual was doing, you should be able to predict the long-term behavior of the
+ whole population. This code is about quantifying the diversity of drug responses amongst thousands of clones. If you want to learn more, the code was used in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25600161">this paper</a>.</p>
+<p>Digression over. Here's how to run the code. I have this optimized for use on mac computers (n=2).</p>
+<h3>Instructions</h3>
+<ol>
+<li>Install <a href="https://www.r-project.org">R</a>.<ul>
+<li>note, that this is optimized for version 3.2.</li>
+</ul>
+</li>
+<li>Follow this <a href="https://github.com/frickp/cFPpaper-Rcode/blob/master/copyPaste_rawDataAndPreprocessingScripts/LibraryLoader.R">link</a>, copy the code and paste it in the R console. Run the code by pressing return.<ul>
+<li>This makes sure you have everything that you need installed.</li>
+</ul>
+</li>
+<li>Follow this <a href="https://raw.githubusercontent.com/frickp/cFPpaper-Rcode/master/copyPaste_scripts/Fig3-BoxplotsAndLinearModels.r">link</a>.</li>
+<li>Copy and paste the code into the R console and hit return</li>
+<li>That's it! If you liked it you can try <a href="https://raw.githubusercontent.com/frickp/cFPpaper-Rcode/master/copyPaste_scripts/Fig4-Drug-conc-cFP.R">this link</a>, which I like, or any of the other .R files in <a href="https://github.com/frickp/cFPpaper-Rcode/tree/master/copyPaste_scripts">this directory</a>.</li>
+</ol>
+<h3>Commentary</h3>
+<p>Ok, so what is the code doing? Usually you have to point R to where the data are stored locally, but I don't want to assume you know how to do that or to clone a git directory.
+So, using the <code>RCurl</code> package, I am telling R to pull all the needed data and functions directly from my online GitHub directory. You can see these in the code as <code>source</code> commands. I've found this helpful in increasing the readability and modularity of the code.</p>
+<p>If you followed my suggestion in step 3, the code will do some pre-processing using functions read from the indicated <code>source</code>.
+First is <code>cFP_norm72.r</code>. This code reads in a pre-organized dataset containing the timecourse dynamics of thousands of clones across different drugs. After reading in the data, each clone is assigned a unique ID and is log normalized.
+Next, the code reads in <code>cFP-comboEstimateSlopes.r</code>. This script approximates the drug response of each each clone as a growth rate, computed as the slope derived from the linear model best fit.
+Lastly is <code>HGmodel.r</code>, which is developed for another paper, but useful here for computing the best fit for a <a href="https://en.wikipedia.org/wiki/Skew_normal_distribution">skew-normal distribution</a>.</p>
+<p>That's a taste of it. I hope you liked what you saw. A lot more of the scientifically interesting/math modeling stuff I'm much more proud of, but is not yet online (unpublished). Let me know if you like to talk about it offline.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="https://raw.githubusercontent.com/frickp/pelicanSite/master/images/headShot.jpg"/>
+        </p>
+    <p>
+        <strong>About Peter Frick</strong><br/>
+        Thanks for visiting! I am a quantitative scientist, trained in both physics and systems biology. I am passionate about interrogating data intelligently to understand complex systems. This blog is a journal about transitioning from academia to a career in data science.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.linkedin.com/pub/peter-frick/39/455/ab7"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                <li class="list-group-item"><a href="https://github.com/frickp"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://ccsb.vanderbilt.edu/qlab/frontpage" target="_blank">
+                Quaranta lab
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://greenleaf.stanford.edu" target="_blank">
+                Greenleaf lab
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Peter Frick
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
