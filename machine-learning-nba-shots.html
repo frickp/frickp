@@ -169,7 +169,7 @@ init_mathjax();
 <link rel="canonical" href="/machine-learning-nba-shots.html">
 
         <meta name="author" content="Peter Frick" />
-        <meta name="keywords" content="python,NBA,scraping,machine learning" />
+        <meta name="keywords" content="python,NBA,api,machine learning,regression,logistic regression,regularization" />
         <meta name="description" content="In the last post, I pulled some NBA shot data for Andrew Wiggins and put that into a dataframe. Here, we will apply some supervised learning techniques from sklearn to build predictive models and then use visualizations to better understand the data. Some topics we&#39;ll explore are prediction error, regularization, and the tradeoff between prediction accuracy and model interpretability." />
 
         <meta property="og:site_name" content="Peter Frick" />
@@ -181,8 +181,11 @@ init_mathjax();
             <meta property="article:section" content="blog" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="NBA" />
-            <meta property="article:tag" content="scraping" />
+            <meta property="article:tag" content="api" />
             <meta property="article:tag" content="machine learning" />
+            <meta property="article:tag" content="regression" />
+            <meta property="article:tag" content="logistic regression" />
+            <meta property="article:tag" content="regularization" />
             <meta property="article:author" content="Peter Frick" />
 
 
@@ -262,9 +265,15 @@ Peter Frick            </a>
         /
 	<a href="/tag/nba.html">NBA</a>
         /
-	<a href="/tag/scraping.html">scraping</a>
+	<a href="/tag/api.html">api</a>
         /
 	<a href="/tag/machine-learning.html">machine learning</a>
+        /
+	<a href="/tag/regression.html">regression</a>
+        /
+	<a href="/tag/logistic-regression.html">logistic regression</a>
+        /
+	<a href="/tag/regularization.html">regularization</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -1142,7 +1151,7 @@ wQVBifw/dcevV4PoDzMAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overfitting?-We-don't-need-no-stinking-overfitting!">Overfitting? We don't need no stinking overfitting!<a class="anchor-link" href="#Overfitting?-We-don't-need-no-stinking-overfitting!">¶</a></h3><p>All predictors are not created equal. If we use too many predictors, our model will be too complex and we will overfit the data. As a result, we lose prediction accuracy and miss out on some of the underlying relationships.</p>
-<p>To account for overfitting, we will utilize <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics">regularization</a>), which serves to penalize the model for complexity. This subsequently reduces the contribution of unimportant variables.</p>
+<p>To account for overfitting, we will utilize <a href="https://en.wikipedia.org/wiki/Regularization_%28mathematics%29">regularization</a>, which serves to penalize the model for complexity. This subsequently reduces the contribution of unimportant variables.</p>
 <p>Luckily, regularization is built into the logistic regression function in <code>sklearn</code>, we just need to tune coeffecient value.</p>
 </div>
 </div>
@@ -3389,6 +3398,35 @@ AAASvQIwJKaw/vuL+gAAAABJRU5ErkJggg==
 
 
 
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/python.html">
+                            python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/data-science.html">
+                            data science
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/r.html">
+                            R
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="/tag/stats.html">
+                            stats
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="/tag/api.html">
+                            api
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
