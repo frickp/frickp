@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2015-12-04T12:54:18-00:00</lastmod>
+<lastmod>2016-01-07T13:05:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2015-12-04T12:54:18-00:00</lastmod>
+<lastmod>2016-01-07T13:05:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2015-12-04T12:54:18-00:00</lastmod>
+<lastmod>2016-01-07T13:05:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2015-12-04T12:54:18-00:00</lastmod>
+<lastmod>2016-01-07T13:05:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/pages/about-me.html</loc>
 <lastmod>2015-10-02T19:30:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/myfirst-mysql.html</loc>
+<lastmod>2015-12-09T19:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -62,6 +69,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/pca-for-5-year-old.html</loc>
 <lastmod>2015-10-15T00:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/machine-learning-nba-shots.html</loc>
+<lastmod>2015-10-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -117,7 +131,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/blog.html</loc>
-<lastmod>2015-12-04T00:00:00+00:09</lastmod>
+<lastmod>2015-12-09T19:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +166,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/data-science.html</loc>
-<lastmod>2015-12-04T00:00:00+00:09</lastmod>
+<lastmod>2015-12-09T19:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -193,6 +207,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/machine-learning.html</loc>
+<lastmod>2015-10-11T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/mysql.html</loc>
+<lastmod>2015-12-09T19:30:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/ipython.html</loc>
 <lastmod>2015-09-03T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -208,7 +236,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/nba.html</loc>
-<lastmod>2015-10-10T00:00:00+00:09</lastmod>
+<lastmod>2015-10-11T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -222,7 +250,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/peter-frick.html</loc>
-<lastmod>2015-12-04T00:00:00+00:09</lastmod>
+<lastmod>2015-12-09T19:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
