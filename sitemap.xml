@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-01-07T14:53:38-00:00</lastmod>
+<lastmod>2016-01-31T22:30:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-01-07T14:53:38-00:00</lastmod>
+<lastmod>2016-01-31T22:30:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2016-01-07T14:53:38-00:00</lastmod>
+<lastmod>2016-01-31T22:30:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2016-01-07T14:53:38-00:00</lastmod>
+<lastmod>2016-01-31T22:30:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/pages/about-me.html</loc>
 <lastmod>2015-10-02T19:30:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/lda-airline-visualization.html</loc>
+<lastmod>2016-01-31T00:00:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/d3-test.html</loc>
+<lastmod>2016-01-25T00:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -131,14 +145,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/blog.html</loc>
-<lastmod>2015-12-09T19:30:00+00:09</lastmod>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/data-science.html</loc>
-<lastmod>2015-12-09T19:30:00+00:09</lastmod>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -257,7 +271,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/python.html</loc>
-<lastmod>2015-12-04T00:00:00+00:09</lastmod>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -285,7 +299,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/scraping.html</loc>
-<lastmod>2015-10-19T00:00:00+00:09</lastmod>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -299,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/peter-frick.html</loc>
-<lastmod>2015-12-09T19:30:00+00:09</lastmod>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
