@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-02-01T10:23:14-00:00</lastmod>
+<lastmod>2016-02-07T22:42:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-02-01T10:23:14-00:00</lastmod>
+<lastmod>2016-02-07T22:42:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2016-02-01T10:23:14-00:00</lastmod>
+<lastmod>2016-02-07T22:42:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2016-02-01T10:23:14-00:00</lastmod>
+<lastmod>2016-02-07T22:42:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,15 +39,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/lda-airline-visualization.html</loc>
-<lastmod>2016-01-31T00:00:00+01:00</lastmod>
+<loc>/pages/insight.html</loc>
+<lastmod>2016-02-07T19:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/d3-test.html</loc>
-<lastmod>2016-01-25T00:00:00+01:00</lastmod>
+<loc>/lda-airline-visualization.html</loc>
+<lastmod>2016-01-31T00:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -158,8 +158,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/text.html</loc>
-<lastmod>2015-10-17T00:00:00+00:09</lastmod>
+<loc>/tag/topic-modeling.html</loc>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/twitter.html</loc>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -257,7 +264,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/machine-learning.html</loc>
-<lastmod>2015-10-11T00:00:00+00:09</lastmod>
+<lastmod>2016-01-31T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/text.html</loc>
+<lastmod>2015-10-17T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -299,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/scraping.html</loc>
-<lastmod>2016-01-31T00:00:00+00:09</lastmod>
+<lastmod>2015-10-19T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
