@@ -1,43 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>Peter Frick</title>
-        <meta charset="utf-8" />
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
 
-    <meta name="tags" content="R" />
-    <meta name="tags" content="research" />
-    <meta name="tags" content="systems" />
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Peter Frick" />
+<meta name="description" content="Example R code to process highly-multiplexed cancer drug responses. Formatted so that you should be able to run it on a mac." />
+<meta name="keywords" content="R, research, systems">
+<meta property="og:site_name" content="Peter Frick"/>
+<meta property="og:title" content="Measuring cancer cell dynamics in response to therapy"/>
+<meta property="og:description" content="Example R code to process highly-multiplexed cancer drug responses. Formatted so that you should be able to run it on a mac."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/r-phd-code.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-10-09 10:20:00+02:00"/>
+<meta property="article:modified_time" content="2015-10-02 19:30:00+02:00"/>
+<meta property="article:author" content="/author/peter-frick.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="R"/>
+<meta property="article:tag" content="research"/>
+<meta property="article:tag" content="systems"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/frickp/insight/master/FrickHeadshot.jpg">
+
+  <title>Peter Frick &ndash; Measuring cancer cell dynamics in response to therapy</title>
 
 </head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="https://raw.githubusercontent.com/frickp/insight/master/FrickHeadshot.jpg" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Peter Frick <strong></strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="/pages/about-me.html">About me</a></li>
-            <li><a href="/pages/insight.html">Insight project</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
+
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About me</a></li>
+          <li><a href="/pages/insight.html#insight">Insight project</a></li>
+
+          <li><a href="http://frickp.github.io" target="_blank">Blog</a></li>
+          <li><a href="http://ccsb.vanderbilt.edu/qlab/frontpage" target="_blank">Quaranta lab</a></li>
+          <li><a href="http://greenleaf.stanford.edu" target="_blank">Greenleaf lab</a></li>
+          <li><a href="http://insightdatascience.com" target="_blank">Insight Data Science</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-LinkedIn" href="https://www.linkedin.com/pub/peter-frick/39/455/ab7" target="_blank"><i class="fa fa-LinkedIn"></i></a></li>
+        <li><a class="sc-GitHub" href="https://github.com/frickp" target="_blank"><i class="fa fa-GitHub"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
   <header>
-    <h2 class="entry-title">
-      <a href="/r-phd-code.html" rel="bookmark"
-         title="Permalink to Measuring cancer cell dynamics in response to therapy">Measuring cancer cell dynamics in response to therapy</a></h2>
- 
+    <h1 id="r-phd-code">Measuring cancer cell dynamics in response to therapy</h1>
+    <p>
+          Posted on Fri 09 October 2015 in <a href="/category/blog.html">blog</a>
+
+
+    </p>
   </header>
-  <footer class="post-info">
-    <time class="published" datetime="2015-10-09T10:20:00+02:00">
-      Fri 09 October 2015
-    </time>
-    <time class="modified" datetime="2015-10-02T19:30:00+02:00">
-      Fri 02 October 2015
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="/author/peter-frick.html">Peter Frick</a>
-    </address>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
+
+
+  <div>
     <h3>Purpose</h3>
 <p>The goal of this post is to allow <em>you</em> to run some of the code I used during my PhD. 
 I don't want to assume that you know how to use R, or how to use git. So, follow the steps to see a flavor of what I did.</p>
@@ -71,13 +118,40 @@ First is <code>cFP_norm72.r</code>. This code reads in a pre-organized dataset c
 Next, the code reads in <code>cFP-comboEstimateSlopes.r</code>. This script approximates the drug response of each each clone as a growth rate, computed as the slope derived from the linear model best fit.
 Lastly is <code>HGmodel.r</code>, which is developed for another paper, but useful here for computing the best fit for a <a href="https://en.wikipedia.org/wiki/Skew_normal_distribution">skew-normal distribution</a>.</p>
 <p>That's a taste of it. I hope you liked what you saw. A lot more of the scientifically interesting/math modeling stuff I'm much more proud of, but is not yet online (unpublished). Let me know if you like to talk about it offline.</p>
-  </div><!-- /.entry-content -->
-</section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/r.html">R</a>
+      <a href="/tag/research.html">research</a>
+      <a href="/tag/systems.html">systems</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Peter Frick </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Peter Frick ",
+  "url" : "",
+  "image": "https://raw.githubusercontent.com/frickp/insight/master/FrickHeadshot.jpg",
+  "description": ""
+}
+</script>
+  
 </body>
 </html>

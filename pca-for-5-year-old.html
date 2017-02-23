@@ -1,41 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>Peter Frick</title>
-        <meta charset="utf-8" />
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
 
-    <meta name="tags" content="R" />
-    <meta name="tags" content="data science" />
-    <meta name="tags" content="stats" />
-    <meta name="tags" content="PCA" />
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Peter Frick" />
+<meta name="description" content="I went to a talk a couple of weeks ago at Stanford on using machine learning to understand complex biological data. At one point in the talk the speaker made an offhand comment about data so simple "that a five year old could cluster it". Wow, were you that smart at five?" />
+<meta name="keywords" content="R, data science, stats, PCA">
+<meta property="og:site_name" content="Peter Frick"/>
+<meta property="og:title" content="Principal Component Analysis for a five year old"/>
+<meta property="og:description" content="I went to a talk a couple of weeks ago at Stanford on using machine learning to understand complex biological data. At one point in the talk the speaker made an offhand comment about data so simple "that a five year old could cluster it". Wow, were you that smart at five?"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/pca-for-5-year-old.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-10-15 00:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/peter-frick.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="R"/>
+<meta property="article:tag" content="data science"/>
+<meta property="article:tag" content="stats"/>
+<meta property="article:tag" content="PCA"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/frickp/insight/master/FrickHeadshot.jpg">
+
+  <title>Peter Frick &ndash; Principal Component Analysis for a five year old</title>
 
 </head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="https://raw.githubusercontent.com/frickp/insight/master/FrickHeadshot.jpg" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Peter Frick <strong></strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="/pages/about-me.html">About me</a></li>
-            <li><a href="/pages/insight.html">Insight project</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
+
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About me</a></li>
+          <li><a href="/pages/insight.html#insight">Insight project</a></li>
+
+          <li><a href="http://frickp.github.io" target="_blank">Blog</a></li>
+          <li><a href="http://ccsb.vanderbilt.edu/qlab/frontpage" target="_blank">Quaranta lab</a></li>
+          <li><a href="http://greenleaf.stanford.edu" target="_blank">Greenleaf lab</a></li>
+          <li><a href="http://insightdatascience.com" target="_blank">Insight Data Science</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-LinkedIn" href="https://www.linkedin.com/pub/peter-frick/39/455/ab7" target="_blank"><i class="fa fa-LinkedIn"></i></a></li>
+        <li><a class="sc-GitHub" href="https://github.com/frickp" target="_blank"><i class="fa fa-GitHub"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
   <header>
-    <h2 class="entry-title">
-      <a href="/pca-for-5-year-old.html" rel="bookmark"
-         title="Permalink to Principal Component Analysis for a five year old">Principal Component Analysis for a five year old</a></h2>
- 
+    <h1 id="pca-for-5-year-old">Principal Component Analysis for a five year old</h1>
+    <p>
+          Posted on Thu 15 October 2015 in <a href="/category/blog.html">blog</a>
+
+
+    </p>
   </header>
-  <footer class="post-info">
-    <time class="published" datetime="2015-10-15T00:00:00+02:00">
-      Thu 15 October 2015
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="/author/peter-frick.html">Peter Frick</a>
-    </address>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
+
+
+  <div>
     <style type="text/css">/*!
 *
 * IPython notebook
@@ -1498,13 +1548,41 @@ text<span class="p">(</span>pca<span class="o">$</span>scores<span class="p">[,<
 }
 </script>
 
-  </div><!-- /.entry-content -->
-</section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/r.html">R</a>
+      <a href="/tag/data-science.html">data science</a>
+      <a href="/tag/stats.html">stats</a>
+      <a href="/tag/pca.html">PCA</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Peter Frick </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Peter Frick ",
+  "url" : "",
+  "image": "https://raw.githubusercontent.com/frickp/insight/master/FrickHeadshot.jpg",
+  "description": ""
+}
+</script>
+  
 </body>
 </html>
