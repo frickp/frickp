@@ -55,7 +55,6 @@
       <nav>
         <ul class="list">
           <li><a href="/pages/about-me.html#about-me">About me</a></li>
-          <li><a href="/pages/insight.html#insight">Insight project</a></li>
 
           <li><a href="http://frickp.github.io" target="_blank">Blog</a></li>
           <li><a href="http://ccsb.vanderbilt.edu/qlab/frontpage" target="_blank">Quaranta lab</a></li>
@@ -244,6 +243,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -264,11 +264,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -1006,8 +1001,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -1018,9 +1015,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1149,7 +1148,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPwAAAFbCAYAAADxxeOFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXeYVNX5xz9LVSwIYm+I5VWJGHtXVMTee6/RxGjsqGA0
@@ -1530,7 +1530,8 @@ MfBSISvw4nvH26Z8EQAAAABJRU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>'@virginamerica you ROCK for making it so I can watch #Oscars on my flight!! #redcarpet #oscars #oscars2015'</pre>
 </div>
@@ -1604,7 +1605,7 @@ MfBSISvw4nvH26Z8EQAAAABJRU5ErkJggg==
     <span class="k">if</span> <span class="n">myWord</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">myWord</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub</span><span class="p">(</span><span class="s1">r'[^\x00-\x7F]+'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="n">myWord</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[^\x00-\x7F]+'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="n">myWord</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
 
 <span class="k">def</span> <span class="nf">lemmatize</span><span class="p">(</span><span class="n">myWord</span><span class="p">):</span>
     <span class="sd">"""Function to lemmatize words"""</span>
@@ -1700,7 +1701,8 @@ MfBSISvw4nvH26Z8EQAAAABJRU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>['rock',
  'making',
@@ -1828,7 +1830,8 @@ MfBSISvw4nvH26Z8EQAAAABJRU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <link href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css" rel="stylesheet" type="text/css" />
 <div id="ldavis_el1657044901476643083283113"></div>
@@ -2008,7 +2011,8 @@ if(typeof(LDAvis) !== "undefined"){
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVIAAAEnCAYAAAD7OsudAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXncVGX1wL8vCLgArm+hoiIKR6OS3DAsF1DDEtRKI5ey
@@ -2329,7 +2333,8 @@ SUVORK5CYII=
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlkAAAE5CAYAAACj5DWAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXd8FMX7xz97Pb1e2aOFXoJUUXoXBUUBQbpIUYoIKraf
@@ -3991,7 +3996,8 @@ gIssDofD4XA4nCTw/wZenHlT8mfbAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWQAAAGSCAYAAADU0LskAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcVNX/P/DXBWSRRUPBDdwVFBTSLMUlEcw1cUsRF1DB
@@ -4616,7 +4622,8 @@ ODiGCZwgc3BwcAwTOEHm4ODgGCb8P0HgLY9WdvqcAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAGICAYAAACDRkZAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XdUVOf2N/DvoXeUgFEUFVEGBBEsiWCwEMWuWGLDgt2f
@@ -5049,6 +5056,7 @@ HypyCmWEQ0VOoYxwqMgplBEOFTmFMsKhIqdQRjhU5BTKCIeKnEIZ4VCRUygjHCpyCmWEQ0VOoYxw
 </div>
 </div>
 </div>
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';

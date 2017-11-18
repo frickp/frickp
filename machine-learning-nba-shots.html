@@ -57,7 +57,6 @@
       <nav>
         <ul class="list">
           <li><a href="/pages/about-me.html#about-me">About me</a></li>
-          <li><a href="/pages/insight.html#insight">Insight project</a></li>
 
           <li><a href="http://frickp.github.io" target="_blank">Blog</a></li>
           <li><a href="http://ccsb.vanderbilt.edu/qlab/frontpage" target="_blank">Quaranta lab</a></li>
@@ -246,6 +245,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -266,11 +266,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -1008,8 +1003,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -1020,9 +1017,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1174,7 +1173,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[176]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[176]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[None, None, None, None, None, None, None, None, None, None, None]</pre>
 </div>
@@ -1272,7 +1272,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Algorithm used:
 RandomForestClassifier(n_estimators=100)    scaled=False
@@ -1325,7 +1326,8 @@ Correctly classified:
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[180]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[180]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -1419,7 +1421,8 @@ Correctly classified:
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[181]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[181]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -1519,7 +1522,8 @@ Correctly classified:
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[212]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[212]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -1612,7 +1616,8 @@ Correctly classified:
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAGDCAYAAABA9X4XAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXeYXFX5xz8bEkJL6L2D8lIV6SCQUEKVDiJFDEUQQhMB
@@ -1930,7 +1935,8 @@ wQVBifw/dcevV4PoDzMAAAAASUVORK5CYII=
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARIAAAEaCAYAAADdZNhOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8XFX5+PFPkqZ7GrrvCy34sBSqVKiylVYQQZFF0K+A
@@ -2195,7 +2201,8 @@ kDjnUvNA4pxLzQOJcy41DyTOudT+P46eYcgo79r6AAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgkAAAGCCAYAAABq/VB+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcVNX/P/DXBVRkM0EUFNyyNEVcIjVFMXc0F/y4YS5p
@@ -2872,7 +2879,8 @@ BCIkAACAQIQEAAAQiJAAAAACERIAAEAgQgIAAAj0CTHDsodBc8MjAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnoAAAD1CAYAAADH01goAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXd4FFXXwH+72fRKQigChhAgIZEECE2kBBFEBF8UUKIU
@@ -3721,7 +3729,8 @@ giAItZTo6AmCIAiCINRSoqMnCIIgCIJQS4mOniAIgiAIQi31/4gnB/qmEDM3AAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlQAAAEWCAYAAACg4AnTAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcVNX/P/DXDMOiDLiLSy6IGkqKAqmVmKmYWqakKLih
@@ -4058,6 +4067,7 @@ AAASvQIwJKaw/vuL+gAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
