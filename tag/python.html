@@ -70,6 +70,87 @@
 
 <article>
   <header>
+    <h2><a href="/training-word2vec-on-text8.html#training-word2vec-on-text8">word2vec part 2: graph building and training</a></h2>
+    <p>
+          Posted on Tue 03 April 2018 in <a href="/category/blog.html">blog</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/python.html">python</a>,              <a href="/tag/machine-learning.html">machine learning</a>,              <a href="/tag/tensorflow.html">tensorflow</a>,              <a href="/tag/nlp.html">nlp</a>,              <a href="/tag/prediction.html">prediction</a>,              <a href="/tag/word2vec.html">word2vec</a>
+    </p>
+  </header>
+  <div>
+      <html><body><div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the last post we built the data preprocessing required for word2vec training. Here the goal is to build the graph and train the network with a couple of different learning rates.</p>
+<p>We will use the text8 dataset, a Wikipedia dump of ~17 million tokens.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+      <br>
+      <a class="btn" href="/training-word2vec-on-text8.html#training-word2vec-on-text8">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/data-flow-for-sequence-models-softmax-expensive.html#data-flow-for-sequence-models-softmax-expensive">word2vec part 1: exploration and defining data flow</a></h2>
+    <p>
+          Posted on Mon 02 April 2018 in <a href="/category/blog.html">blog</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/python.html">python</a>,              <a href="/tag/machine-learning.html">machine learning</a>,              <a href="/tag/tensorflow.html">tensorflow</a>,              <a href="/tag/neural-networds.html">neural networds</a>,              <a href="/tag/nlp.html">nlp</a>
+    </p>
+  </header>
+  <div>
+      <html><body><div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One of the trends I've been seeing is the use of embeddings for similarity/recommendation in non-NLP domains (<a href="https://www.youtube.com/watch?v=JGHVJXP9NHw&amp;list=LLexu7RlzHlP6xuqIgozFcJw&amp;index=4&amp;t=0s">this talk</a> and many others). While I've used/thought about <a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">word2vec</a> for a while, I wanted to implement this to really get a sense of how it works and ways it can be extended to other domains. Intuitively, word2vec makes sense, and there are a lot of packages that will let you compute it without thinking much about the implementation (e.g. <code>gensim</code>
+      <br>
+      <a class="btn" href="/data-flow-for-sequence-models-softmax-expensive.html#data-flow-for-sequence-models-softmax-expensive">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/prediction-using-multilayer-perceptron-tensorflow.html#prediction-using-multilayer-perceptron-tensorflow">Using tensorflow multilayer perceptron to predict housing prices</a></h2>
+    <p>
+          Posted on Thu 29 March 2018 in <a href="/category/blog.html">blog</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/python.html">python</a>,              <a href="/tag/machine-learning.html">machine learning</a>,              <a href="/tag/tensorflow.html">tensorflow</a>,              <a href="/tag/deep-learning.html">deep learning</a>,              <a href="/tag/prediction.html">prediction</a>
+    </p>
+  </header>
+  <div>
+      <html><body><div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I've used keras a bit for deep learning recently. In general it is an excellent tool, but I know there are limitations in using a higher-level tool. In trying to implement an initial model in tensorflow, I found that you have to think about fundamentals of data flow and building computation graphs -- as opposed to machine learning a la <code>sklearn</code>
+      <br>
+      <a class="btn" href="/prediction-using-multilayer-perceptron-tensorflow.html#prediction-using-multilayer-perceptron-tensorflow">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="/neural-networks-text_classification.html#neural-networks-text_classification">Exploring neural networks for text classification</a></h2>
     <p>
           Posted on Fri 17 November 2017 in <a href="/category/blog.html">blog</a>
@@ -254,60 +335,13 @@
       <a class="btn" href="/machine-learning-nba-shots.html#machine-learning-nba-shots">    Continue reading
 </a>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="/python-scrape-nba-shots.html#python-scrape-nba-shots">Scraping NBA shot data using python</a></h2>
-    <p>
-          Posted on Sat 10 October 2015 in <a href="/category/blog.html">blog</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="/tag/python.html">python</a>,              <a href="/tag/nba.html">NBA</a>,              <a href="/tag/api.html">api</a>
-    </p>
-  </header>
-  <div>
-      <html><body><div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>My goal is to learn how to scrape data using python and do some quick data analysis.</p>
-<p>This is my first time scraping from the web. I found <a href="http://www.gregreda.com/2015/02/15/web-scraping-finding-the-api/">this documentation</a> <em>extremely</em> helpful. Here, I'm pulling in the shot log for Andrew Wiggins, the NBA Rookie of the Year for the 2014-2015 season.</p>
-      <br>
-      <a class="btn" href="/python-scrape-nba-shots.html#python-scrape-nba-shots">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="/python-multiple-regression.html#python-multiple-regression">Using python to get an intuition for multiple regression</a></h2>
-    <p>
-          Posted on Fri 02 October 2015 in <a href="/category/blog.html">blog</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="/tag/python.html">python</a>,              <a href="/tag/data-science.html">data science</a>,              <a href="/tag/regression.html">regression</a>,              <a href="/tag/stats.html">stats</a>
-    </p>
-  </header>
-  <div>
-      <html><body><div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I want to get some intuition about regression models using multiple independent variables. More precisely, I am unsure if the relevant predictors would be better uncovered by multiple regression, or by pairwise analysis of all predictors against the response variable. So I'd like to use a dataset where I know the precise contribution of each predictor to the response variable.</p>
-      <br>
-      <a class="btn" href="/python-multiple-regression.html#python-multiple-regression">    Continue reading
-</a>
-  </div>
 </article>
 
   <div class="pagination">
+    <a class="btn" href="/tag/python2.html">
+      <i class="fa fa-angle-left"></i>     Older Posts
+
+    </a>
   </div>
 
 
