@@ -1069,6 +1069,7 @@ h6:hover .anchor-link {
 <ul>
 <li>explore objective function</li>
 <li>read in batches of data using a generator</li>
+<li>validate generator performance on a sample sequence</li>
 </ul>
 </div>
 </div>
@@ -1151,8 +1152,8 @@ softmax(a)
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 367 ms, sys: 132 ms, total: 499 ms
-Wall time: 498 ms
+<pre>CPU times: user 386 ms, sys: 155 ms, total: 541 ms
+Wall time: 541 ms
 </pre>
 </div>
 </div>
@@ -1161,7 +1162,7 @@ Wall time: 498 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [308]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> _ = np.sum(a)
@@ -1175,10 +1176,10 @@ Wall time: 498 ms
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 12.8 ms, sys: 1.08 ms, total: 13.9 ms
-Wall time: 12.2 ms
-CPU times: user 154 ms, sys: 36.1 ms, total: 190 ms
-Wall time: 190 ms
+<pre>CPU times: user 12.3 ms, sys: 658 µs, total: 13 ms
+Wall time: 12.1 ms
+CPU times: user 166 ms, sys: 44.1 ms, total: 211 ms
+Wall time: 210 ms
 </pre>
 </div>
 </div>
@@ -1190,7 +1191,9 @@ Wall time: 190 ms
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Input-data-in-batches-of-target,-context">Input data in batches of target, context<a class="anchor-link" href="#Input-data-in-batches-of-target,-context">¶</a></h3><p>In order to train our models we need to create a function that batches in data to the computation graph, with size labels ([batch_size,1]) and target words (batch_size,). There's a couple ways to do this, I'm drawing inspiration from the official tensorflow code, and this implementation(Stanford). Reading the fairly complete code left me scratching my head on multiple occasions, so I'm starting from the ground up. First, write a function that samples from a window both a center word and a context word (could be multiple).</p>
+<h3 id="Input-data-in-batches-of-target,-context">Input data in batches of target, context<a class="anchor-link" href="#Input-data-in-batches-of-target,-context">¶</a></h3><p>In order to train our models we need to create a function that batches in data to the computation graph, with size labels ([batch_size,1]) and context words (batch_size,), where the labels are the center words and the context words are words within two (or other) positions of the word. Notice that they are both of dimension batch size, so this tells us we sample the center word and the context word concurrently.</p>
+<p>There's a couple ways to do this, I'm drawing inspiration from the official tensorflow <a href="https://github.com/tensorflow/tensorflow/blob/r1.7/tensorflow/examples/tutorials/word2vec/word2vec_basic.py">code</a>, and this Stanford <a href="http://web.stanford.edu/class/cs224n/syllabus.html">implementation</a> . Reading the fairly complete code left me scratching my head on multiple occasions, so I'm starting from the ground up. First, write a function that samples from a window both a center word and a context word (could be multiple).</p>
+<p>First, create a sequence of ordered integers for testing</p>
 </div>
 </div>
 </div>
@@ -1219,10 +1222,10 @@ Wall time: 190 ms
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">num_samples</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">num_skips</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># track position in sequence</span>
+<span class="n">num_samples</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># repeat sampling from the window</span>
+<span class="n">num_skips</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># defines window size to sample from, i.e., 2 * num_skips + 1</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span> <span class="c1"># size of data batches used at each epoch</span>
 </pre></div>
 </div>
 </div>
@@ -1254,7 +1257,8 @@ Wall time: 190 ms
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">context</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create vectors to be populated</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">([</span><span class="n">batch_size</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1266,9 +1270,13 @@ Wall time: 190 ms
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">leading_edge</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">-</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define the right-most position of the window</span>
+<span class="n">leading_edge</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">-</span> <span class="mi">1</span> 
 
+<span class="c1"># this is the window</span>
 <span class="n">buffer</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span> <span class="o">=</span> <span class="n">window_size</span><span class="p">)</span>
+
+<span class="c1"># set the initial values</span>
 <span class="n">buffer</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">leading_edge</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1287,6 +1295,15 @@ Wall time: 190 ms
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These two for loops capture the logic of the data preparation. Move forward one position, and sample (context, label) _num<em>samples</em> times. Continue until the batch is complete and the arrays are ready to be fed into the model</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
@@ -1302,6 +1319,15 @@ Wall time: 190 ms
     <span class="n">leading_edge</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Take a look at how this does on our sample sequence</p>
 </div>
 </div>
 </div>
@@ -1325,7 +1351,7 @@ Wall time: 190 ms
         [3],
         [3],
         [4],
-        [4]], dtype=int32), array([2, 4, 4, 3, 2, 3], dtype=int32))</pre>
+        [4]], dtype=int32), array([2, 3, 5, 1, 3, 5], dtype=int32))</pre>
 </div>
 </div>
 </div>
@@ -1345,14 +1371,25 @@ Wall time: 190 ms
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Try-on-a-sample-text-sequence">Try on a sample text sequence<a class="anchor-link" href="#Try-on-a-sample-text-sequence">¶</a></h3><p>The way to feed in text to the model is a sequence of integers, that map to both the original words and the learned embeddings. This will be clear in the next blog post</p>
+<h4 id="create-random-text">create random text<a class="anchor-link" href="#create-random-text">¶</a></h4><p>length = 50,000; vocab = 1,000</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [43]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create random text length = 50,000; vocab = 1,000</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span><span class="n">size</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span><span class="n">size</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'sample sequence data:'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">data length:'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1363,7 +1400,10 @@ Wall time: 190 ms
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[135 909 866 ... 959 686  85]
+<pre>sample sequence data:
+[508 655 540 ...  52 422 489]
+
+data length:
 50000
 </pre>
 </div>
@@ -1373,7 +1413,7 @@ Wall time: 190 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [266]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">batch_gen_w2v</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span><span class="n">num_skips</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">num_samples</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
@@ -1419,7 +1459,7 @@ Wall time: 190 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [275]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">8</span>
@@ -1430,18 +1470,27 @@ Wall time: 190 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [268]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reset_default_graph</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reset_default_graph</span><span class="p">()</span> <span class="c1"># This avoids conflicts if you run the graph cells multiple times</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>use data placeholders and iterators, as before</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [276]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="n">batch_size</span><span class="p">])</span>
@@ -1453,7 +1502,7 @@ Wall time: 190 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [277]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_generator</span><span class="p">(</span>
@@ -1471,18 +1520,27 @@ Wall time: 190 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [305]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iden</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="c1"># layer to show what data the model "sees"</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iden</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="c1"># layer to show what data the model "sees". For troubleshooting</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Run-the-graph">Run the graph<a class="anchor-link" href="#Run-the-graph">¶</a></h3><p>Look at the first 3 batches (size: 8) to make sure it matches our expectation</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [280]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1497,9 +1555,18 @@ Wall time: 190 ms
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check to see the results of the generator</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [283]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_batch</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">iden_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
@@ -1518,18 +1585,27 @@ Wall time: 190 ms
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>first batch:[866, 866, 95, 95, 549, 549, 40, 40]
-second batch:[129, 129, 268, 268, 546, 546, 966, 966]
-third batch:[970, 970, 453, 453, 934, 934, 806, 806]
+<pre>first batch:[540, 540, 434, 434, 260, 260, 645, 645]
+second batch:[469, 469, 16, 16, 60, 60, 432, 432]
+third batch:[207, 207, 686, 686, 622, 622, 375, 375]
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compare to ground truth</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [304]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_batches</span> <span class="o">=</span> <span class="p">[[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]],</span>
@@ -1548,9 +1624,9 @@ third batch:[970, 970, 453, 453, 934, 934, 806, 806]
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>data first batch: [866, 95, 549, 40]
-data second batch: [129, 268, 546, 966]
-data third batch: [970, 453, 934, 806]
+<pre>data first batch: [540, 434, 260, 645]
+data second batch: [469, 16, 60, 432]
+data third batch: [207, 686, 622, 375]
 </pre>
 </div>
 </div>
@@ -1571,9 +1647,8 @@ data third batch: [970, 453, 934, 806]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h1><p>First, we explored the computational cost of a softmax with embedding layers and found that it is phohibitively expensive. More precisely, it is the exponential part of the softmax that is so expensive.</p>
-<p>Next, we built a generator to feed sequence data into a neural network model. This really was the hardest part and building it from scratch really gives a handle on what is happening.</p>
-<p>With this in hand, we are ready for building the graph and training the word2vec model</p>
+<h1 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h1><p>First, we explored the computational cost of a softmax with embedding layers and found that it is prohibitively expensive. More precisely, it is the exponential part of the softmax that is so expensive.</p>
+<p>Next, we built a generator to feed sequence data into a neural network model. This really was the hardest part and building it from scratch really gives a handle on what is happening. The generator works as expected and, with this in hand, we are ready for building the graph and training the word2vec model</p>
 </div>
 </div>
 </div>
